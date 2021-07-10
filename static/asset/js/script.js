@@ -25,6 +25,11 @@ window.addEventListener("load" , function(){
     $(".bar_chart").on("click", function(){ bar_chart(); });
 
 
+    $(".category_income").on("click",function(){ console.log("収入"); });
+    $(".category_spending").on("click",function(){ console.log("支出"); });
+
+
+
     //モーダルの領域外が押されたときの処理
     $('#modal').on('click', function(event) {
         //#modalがクリックされた時、クリック位置が#modal_contentではない時、モーダルを非表示にする。
@@ -44,8 +49,6 @@ function pie_chart(){
 }
 
 function bar_chart(){
-    
-    console.log("end");
     draw_bar_graph();
     $("#single_graph").show();
     $("#modal").show();
@@ -67,6 +70,10 @@ function draw_bar_graph(){
     console.log(data["income_data"]);
     console.log(data["spending_data"]);
 
+
+
+
+    /*
     let income      = {
         labels: Object.keys(income_data),
         datasets: [ {
@@ -81,6 +88,7 @@ function draw_bar_graph(){
             borderWidth: 1
         } ]
     };
+    */
 
 
     if (CHART0) {
@@ -336,8 +344,6 @@ function get_pie_data(val){
 
     console.log(income_data);
     console.log(spending_data);
-
-    
 
     return {"income_data":income_data,"spending_data":spending_data};
 

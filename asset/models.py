@@ -7,7 +7,8 @@ class Category(models.Model):
         db_table = "category"
 
     name = models.CharField(verbose_name="カテゴリ名",max_length=100)
-    dt =models.DateTimeField(verbose_name="追加日", default=timezone.now)
+    dt = models.DateTimeField(verbose_name="追加日", default=timezone.now)
+    income = models.BooleanField(verbose_name="収支(True=収入,False=支出)",default=False)
 
     def __str__(self):
         return self.name
